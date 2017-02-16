@@ -1,0 +1,18 @@
+import React from "react";
+import { render } from "react-dom";
+
+class HelloReact extends React.Component {
+
+    constructor(props) {
+        this.text = "Hello";
+    }
+
+    render() {
+        return (<div>
+              <h1>{this.text} {this.props.message} React !</h1>
+          </div>;
+        );
+    }
+};
+
+render(<HelloReact message="World" />, document.getElementById('app'));

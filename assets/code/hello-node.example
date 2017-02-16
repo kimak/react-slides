@@ -1,0 +1,21 @@
+/* app.js */
+var http = require(‘http’);
+
+http.createServer(function (req, res) {
+
+    res.writeHead(200, {‘Content-Type’: ‘text/plain’});
+
+    res.end(‘Hello World\n’);
+
+}).listen(1337, ‘127.0.0.1’);
+
+console.log(‘Serveur accessible via http://127.0.0.1:1337/’);
+
+/* 
+- Commande à lancer depuis le terminal
+$ node app.js
+
+- Affichage dans le terminal
+Serveur accessible via http://127.0.0.1:1337/
+*/
+

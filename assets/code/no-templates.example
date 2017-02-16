@@ -1,0 +1,12 @@
+return (
+  <div>
+    <Header />
+    <Content type="main" />
+        <HelloReact message="World" />
+        <div>
+          <article>Html or component ?</article>
+        </div>
+    </Content>
+    <Footer />
+  </div>
+)

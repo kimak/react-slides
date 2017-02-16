@@ -1,0 +1,10 @@
+/** @jsx React.DOM */
+function HelloJsx() {
+  return (
+    <div>
+      <h1>Hello</h1>
+      <p>JSX</p>
+      <CustomComponent value="toto" />
+    </div>
+  );
+}
