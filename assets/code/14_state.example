@@ -1,0 +1,36 @@
+import React, { Component, PropTypes } from 'react';
+
+class HelloProps extends Component {
+  render() {
+    return (
+      <div>
+        Hello {this.props.name}
+        <div>Counted : {this.props.value}</div>
+      </div>
+    );
+  }
+}
+
+class App extends Component {
+ constructor(props){
+     super(props);
+     this.onButtonClick = this.onButtonClick.bind(this);
+     this.state = {
+         count: 0
+     };
+ }
+  onButtonClick() {
+    this.setState({
+        count: this.state.count +1,
+    })
+  }
+  render() {
+    return (
+        <div>
+            <HelloProps value={this.state.count} />
+            <button onClick={this.onButtonClick}>Click</button>
+        </div>
+    );
+  }
+}
+export default App;

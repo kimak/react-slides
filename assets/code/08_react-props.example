@@ -1,0 +1,19 @@
+import React, { Component } from 'react';
+
+class HelloProps extends Component {
+  render() {
+    return (
+      <div>Hello {this.props.name}</div>
+    );
+  }
+}
+
+class App extends Component {
+  render() {
+    return (
+      <HelloProps name="Mickael" />
+    );
+  }
+}
+
+export default App;

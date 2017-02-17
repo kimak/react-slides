@@ -21,8 +21,8 @@ import {
   Spectacle,
   Text,
   S,
-  ComponentPlayground,
 } from "spectacle";
+
 import CodeSlide from 'spectacle-code-slide';
 
 // Import image preloader util
@@ -38,6 +38,7 @@ import Interactive from "../assets/interactive";
 import Title from "./template/title";
 import ImageSlide from "./template/image";
 import CustomLink from "./template/customLink";
+import logo from "./logo";
 // Require CSS
 require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
@@ -66,7 +67,11 @@ const images = {
     vdomexplain: require("../assets/intro/vdom-explain.png"),
     domexplain: require("../assets/intro/DOM-explain.png"),
     realdom: require("../assets/intro/real-dom.png"), 
-    virtual_dom_abstraction: require("../assets/intro/virtual_dom_abstraction.jpg")
+    virtual_dom_abstraction: require("../assets/intro/virtual_dom_abstraction.jpg"),
+    lego: require("../assets/intro/lego.jpg"),
+    onereturn: require("../assets/intro/one-return.png"),
+    lifecycle: require("../assets/intro/lifecycle.png"),
+    mike: require("../assets/intro/mike.png")
   }
 };
 
@@ -89,12 +94,19 @@ export default class Presentation extends React.Component {
       <Spectacle theme={theme}>
         <Deck transition={["zoom", "slide"]} transitionDuration={500} progress="bar">
         <Slide transition={["zoom"]} bgColor="blackcurrant">
+                    <div dangerouslySetInnerHTML={{__html: logo}}></div>
                     <Heading fit size={1} >
                       Formation
                     </Heading>
                     <Heading fit caps size={1} textColor="dandelion">
                       React & React Native
                     </Heading>
+                  </Slide>
+                  <Slide transition={["zoom"]} bgColor="blackcurrant">
+                    <ImageSlide title="Présentation"
+                      imageSrc={images.intro.mike}
+                      imageHeight="493px"
+                    />
                   </Slide>
                   <Slide transition={["zoom"]} bgColor="blackcurrant">
                     <Title title="Introduction"
@@ -161,7 +173,7 @@ export default class Presentation extends React.Component {
                     </Heading>
                     <CodePane
                       lang="jsx"
-                      source={require("raw-loader!../assets/code/hello-node.example")}
+                      source={require("raw-loader!../assets/code/01_hello-node.example")}
                       margin="20px auto"
                     />
                 </Slide>
@@ -234,6 +246,12 @@ export default class Presentation extends React.Component {
                     </BlockQuote>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <ImageSlide title="Les Design Patterns"
+                      imageSrc={images.intro.lego}
+                      imageHeight="405px"
+                    />
+                </Slide>
+                <Slide transition={["slide"]} bgColor="blackcurrant">
                     <ImageSlide title="Model View Controller"
                       subtitle="Design Pattern"
                       imageSrc={images.intro.mvc}
@@ -290,7 +308,7 @@ export default class Presentation extends React.Component {
                     </Heading>
                     <CodePane
                       lang="jsx"
-                      source={require("raw-loader!../assets/code/hello-react.example")}
+                      source={require("raw-loader!../assets/code/02_hello-react.example")}
                       margin="20px auto"
                     />
                     <Heading size={5} textColor="white" textSize="32px">
@@ -304,7 +322,7 @@ export default class Presentation extends React.Component {
                     </Heading>
                     <CodePane
                       lang="jsx"
-                      source={require("raw-loader!../assets/code/no-templates.example")}
+                      source={require("raw-loader!../assets/code/03_no-templates.example")}
                       margin="20px auto"
                     />
                     <Heading fit size={5} textColor="white">
@@ -340,7 +358,7 @@ export default class Presentation extends React.Component {
                     />
                 </Slide>*/}
                 <Slide transition={["slide"]} bgColor="blackcurrant">
-                    <ImageSlide title={<span>Typologie d'application</span>}
+                    <ImageSlide subtitle={<span>Typologie d'application</span>}
                       imageSrc={images.intro.all}
                       imageHeight="393px"
                     />
@@ -372,7 +390,7 @@ export default class Presentation extends React.Component {
                   </Heading>
                   <CodePane
                     lang="jsx"
-                    source={require("raw-loader!../assets/code/jsx.example")}
+                    source={require("raw-loader!../assets/code/04_jsx.example")}
                     margin="20px auto"
                   />
                   <Heading size={5} textColor="white" textSize="24px">
@@ -380,7 +398,7 @@ export default class Presentation extends React.Component {
                   </Heading>
                   <CodePane
                     lang="jsx"
-                    source={require("raw-loader!../assets/code/jsx.output.example")}
+                    source={require("raw-loader!../assets/code/05_jsx.output.example")}
                     margin="20px auto"
                   />
                   <CustomLink href="http://www.phpied.com/files/react/trans.html">JSX playground</CustomLink>
@@ -454,6 +472,171 @@ export default class Presentation extends React.Component {
                     <Heading size={4} textColor="white" textSize="24px">
                       <span>Contenu accessible par les moteurs de recherche</span>
                     </Heading>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white">
+                      <span>Create React App</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/06_rca.example")}
+                      margin="20px auto"
+                    />
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/07_react-start.example")}
+                      margin="20px auto"
+                    />
+                </Slide>
+
+                <Slide transition={["fade"]} bgColor="blackcurrant" transitionDuration={0}>
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Props = Données reçues par le composant</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/08_react-props.example")}
+                      margin="20px auto"
+                    />
+                    <Heading size={4} textColor="white" textSize="24px">
+                      <span>Comme une propriété en js</span>
+                    </Heading>
+                </Slide>
+
+                <Slide transition={["fade"]}  bgColor="blackcurrant" transitionDuration={0}>
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Validation des props</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/09_validation-props.example")}
+                      margin="20px auto"
+                    />
+                    <Heading size={4} textColor="white" textSize="24px">
+                      <span>Comme une propriété en js</span>
+                    </Heading>
+                </Slide>
+
+                <Slide transition={["fade"]} bgColor="blackcurrant" transitionDuration={0}>
+                    <Heading size={4} textColor="white" textSize="30px" >
+                      <span>Props par défault</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/10_validation-props2.example")}
+                      margin="20px auto"
+                    />
+                </Slide>
+
+                <Slide transition={["fade"]} bgColor="blackcurrant" transitionDuration={0}>
+                    <Heading size={4} textColor="white" textSize="30px" >
+                      <span>Gestion d'évènements</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/11_event.example")}
+                      margin="20px auto"
+                    />
+                </Slide>
+
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Attention !</span>
+                    </Heading>
+                    <ImageSlide
+                      imageSrc={images.intro.onereturn}
+                      imageHeight="300px"
+                    />
+                    <Heading size={4} textColor="white" textSize="24px">
+                      <span>La méthode render() d'un composant doit toujours <br />retourner un seul et unique élément !</span>
+                    </Heading>
+                </Slide>
+
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Attention !</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/12_event-bind.example")}
+                      margin="20px auto"
+                    />
+                </Slide>
+
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>This binding</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/13_bind-constructor.example")}
+                      margin="20px auto"
+                    />
+                </Slide>
+
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>State</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/14_state.example")}
+                      margin="20px auto"
+                    />
+                </Slide>
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                   <Heading fit size={6} textColor="white" textSize="32px">
+                      Props vs State
+                    </Heading>
+                    <BlockQuote>
+                      <Appear><div>
+                        <Quote textColor="white" textSize="32px"><i>“ If a Component needs to alter one of its attributes at some point in time, that attribute should be part of its state, otherwise it should just be a prop for that Component. “</i></Quote>
+                        <Cite textColor="dandelion">Try to keep as many of your components as possible stateless. </Cite>
+                      </div></Appear>
+                    </BlockQuote>
+                </Slide>
+
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Stateless component</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/15_stateless.example")}
+                      margin="20px auto"
+                    />
+                </Slide>
+
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Boucles et conditions</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/16_boucles.example")}
+                      margin="20px auto"
+                    />
+                </Slide>
+
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Composition</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/17_composition.example")}
+                      margin="20px auto"
+                    />
+                </Slide>
+
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Cycle de vie d'un composant</span>
+                    </Heading>
+                    <ImageSlide
+                      imageSrc={images.intro.lifecycle}
+                      imageHeight="550px"
+                    />
                 </Slide>
         </Deck>
       </Spectacle>

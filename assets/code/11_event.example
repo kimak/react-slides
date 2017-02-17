@@ -1,0 +1,34 @@
+import React, { Component, PropTypes } from 'react';
+
+class HelloProps extends Component {
+  render() {
+    return (
+      <div>Hello {this.props.name}</div>
+    );
+  }
+}
+
+HelloProps.propTypes = {
+  name: PropTypes.string
+}
+
+HelloProps.defaultProps = {
+  name: "React"
+}
+
+class App extends Component {
+
+  onButtonClick() {
+    console.log('Button Clicked !')
+  }
+  render() {
+    return (
+        <div>
+            <HelloProps />
+            <button onClick={this.onButtonClick}>Click</button>
+        </div>
+    );
+  }
+}
+
+export default App;

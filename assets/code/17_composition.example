@@ -1,0 +1,22 @@
+const Card = ({ children, imageUrl }) => {
+  return (
+    <section>
+        <img src={imageUrl}/>
+        {children}
+    </section>
+  )
+};
+
+const App = () => {
+  const imageUrl = 'img/jonsnow.png';
+  return (
+    <main>
+      <Card imageUrl={imageUrl}>
+        <div>
+          <h2>Jon snow</h2>
+          <p>Lord Commander<p>
+        </div>
+      </Card>
+    </main>
+  )
+};

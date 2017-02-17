@@ -1,0 +1,7 @@
+https://github.com/facebookincubator/create-react-app
+
+$ npm install -g create-react-app
+
+$ create-react-app hello-react
+$ cd hello-react/
+$ npm start
