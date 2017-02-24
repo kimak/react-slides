@@ -71,7 +71,8 @@ const images = {
     lego: require("../assets/intro/lego.jpg"),
     onereturn: require("../assets/intro/one-return.png"),
     lifecycle: require("../assets/intro/lifecycle.png"),
-    mike: require("../assets/intro/mike.png")
+    mike: require("../assets/intro/mike.png"),
+    todos: require("../assets/intro/react-todo.gif")
   }
 };
 
@@ -651,6 +652,16 @@ export default class Presentation extends React.Component {
                     </Heading>
                     <ImageSlide
                       imageSrc={images.intro.lifecycle}
+                      imageHeight="550px"
+                    />
+                </Slide>
+
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Exercice</span>
+                    </Heading>
+                    <ImageSlide
+                      imageSrc={images.intro.todos}
                       imageHeight="550px"
                     />
                 </Slide>
