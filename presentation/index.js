@@ -609,11 +609,27 @@ export default class Presentation extends React.Component {
 
                 <Slide transition={["fade"]} bgColor="blackcurrant">
                     <Heading size={4} textColor="white" textSize="30px">
+                      <span>ClassName</span>
+                    </Heading>
+                    <CodePane
+                      lang="css"
+                      source={require("raw-loader!../assets/code/16_helloClassCss.example")}
+                      margin="20px auto"
+                    />
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/16_helloClassName.example")}
+                      margin="20px auto"
+                    />
+                </Slide>
+
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
                       <span>Boucles et conditions</span>
                     </Heading>
                     <CodePane
                       lang="jsx"
-                      source={require("raw-loader!../assets/code/16_boucles.example")}
+                      source={require("raw-loader!../assets/code/17_boucles.example")}
                       margin="20px auto"
                     />
                 </Slide>
@@ -624,7 +640,7 @@ export default class Presentation extends React.Component {
                     </Heading>
                     <CodePane
                       lang="jsx"
-                      source={require("raw-loader!../assets/code/17_composition.example")}
+                      source={require("raw-loader!../assets/code/18_composition.example")}
                       margin="20px auto"
                     />
                 </Slide>

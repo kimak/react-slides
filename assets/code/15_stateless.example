@@ -1,6 +1,6 @@
-const HelloState = (props) => {
+const HelloStateless = (props) => {
     return (<h1>Hello, {props.name}</h1>);
 }
 
 //alternative
-const HelloState = ({name}) => <h1>Hello, {name}</h1>;
+const HelloStateless = ({name}) => <h1>Hello, {name}</h1>;
