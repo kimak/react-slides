@@ -81,6 +81,19 @@ const images = {
     smart: require("../assets/intro/smart.png"),
     dumb: require("../assets/intro/dumb.png"),
     devtools: require("../assets/intro/devtools.png")
+  },
+  native:{
+    web: require("../assets/native/web.png"),
+    hybrid: require("../assets/native/hybrid.png"),
+    native: require("../assets/native/native.png"),
+    stats: require("../assets/native/stats.png"),
+    solutions: require("../assets/native/solutions.png"),
+    divide: require("../assets/native/divide.png"),
+    divideChoice: require("../assets/native/divide-choice.png"),
+    hybridList: require("../assets/native/hybrid-list.png"),
+    crossPlatform: require("../assets/native/crossPlatform.png"),
+    jscore: require("../assets/native/jscore.png"),
+    jsv8: require("../assets/native/jsv8.png"),
   }
 };
 
@@ -899,6 +912,134 @@ export default class Presentation extends React.Component {
                     />
                   </Link>
               </Slide>
+              <Slide transition={["zoom"]} bgColor="blackcurrant">
+                <Heading size={6} textColor="dandelion" textSize="42px">
+                  React Native
+                </Heading>
+                <Title
+                      list={[
+                        "Contexte d’application Mobile d’aujourd’hui",
+                        "Hybride vs Native",
+                        "Introduction à React Native"
+                      ]}
+                    />
+              </Slide>
+              <Slide transition={["slide", "fade"]} bgColor="blackcurrant">
+                <Heading size={6} textColor="dandelion" textSize="42px">
+                  <div style={{marginTop: "20px"}}>Créer un service mobile</div>
+                </Heading>
+              <Layout>
+                <Fill>
+                    <Heading size={6} textColor="white" textSize="28px">
+                      <div>Site mobile</div>
+                    </Heading>
+                    <ImageSlide 
+                        imageSrc={images.native.web}
+                        imageHeight="122px"
+                      />
+                    <Heading size={4} textColor="white" textSize="12px">
+                      <div>Application web<br />accessible depuis une url.</div>
+                    </Heading>
+                </Fill>
+                <Fill>
+                  <Heading size={6} textColor="white" textSize="28px">
+                      <div>Application Hybride</div>
+                  </Heading>
+                  <ImageSlide 
+                        imageSrc={images.native.hybrid}
+                        imageHeight="122px"
+                      />
+                    <Heading size={4} textColor="white" textSize="12px">
+                      <div>Application web<br />installé sur mobile</div>
+                    </Heading>
+                </Fill>
+                <Fill>
+                  <Heading size={6} textColor="white" textSize="28px">
+                      <div>Application Native</div>
+                      <div></div>
+                  </Heading>
+                  <ImageSlide 
+                        imageSrc={images.native.native}
+                        imageHeight="122px"
+                      />
+                    <Heading size={4} textColor="white" textSize="12px">
+                      <div>Application installé sur mobile<br />développé dans plusieurs langages.</div>
+                    </Heading>
+                </Fill>
+              </Layout>
+              </Slide>
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                  <Heading size={4} textColor="white" textSize="30px">
+                    <span>Vision du marché mobile mondial</span>
+                  </Heading>
+                    <ImageSlide
+                      imageSrc={images.native.stats}
+                      imageHeight="293px"
+                    />
+              </Slide>
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                  <Heading size={4} textColor="white" textSize="30px">
+                    <span>Aperçu des solutions hybrides et cross plateformes</span>
+                  </Heading>
+                    <ImageSlide
+                      imageSrc={images.native.solutions}
+                      imageHeight="493px"
+                    />
+              </Slide>
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <ImageSlide
+                      imageSrc={images.native.divide}
+                      imageHeight="550px"
+                    />
+              </Slide>
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <ImageSlide
+                      imageSrc={images.native.divideChoice}
+                      imageHeight="550px"
+                    />
+              </Slide>              
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                  <Heading size={4} textColor="white" textSize="30px">
+                    <span>Utilise HTML5 dans un « navigateur » embarqué</span>
+                  </Heading>
+                    <ImageSlide
+                      imageSrc={images.native.hybridList}
+                      imageHeight="493px"
+                    />
+              </Slide>             
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                  <Heading size={4} textColor="white" textSize="30px">
+                    <span>Piloter des composants natifs en JavaScript  </span>
+                  </Heading>
+                    <ImageSlide
+                      imageSrc={images.native.crossPlatform}
+                      imageHeight="403px"
+                    />
+              </Slide>         
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                  <Heading size={4} textColor="white" textSize="30px">
+                    <span>JavascriptCore introduis sous IOS7</span>
+                  </Heading>
+                    <ImageSlide
+                      imageSrc={images.native.jscore}
+                      imageHeight="403px"
+                    />
+              </Slide>      
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                  <Heading size={4} textColor="white" textSize="30px">
+                    <span>Moteur chrome V8 sous Android</span>
+                  </Heading>
+                    <ImageSlide
+                      imageSrc={images.native.jsv8}
+                      imageHeight="403px"
+                    />
+              </Slide>     
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                  <Heading size={4} textColor="white" textSize="30px">
+                    <span>React Native description</span>
+                  </Heading>
+              </Slide>
+              
 
         </Deck>
       </Spectacle>
