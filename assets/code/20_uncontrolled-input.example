@@ -1,0 +1,8 @@
+class UncontrolledInput extends Component {
+
+  render() {
+    return (
+     <input type="text" defaultValue={this.state.value} />
+    );
+  }
+}

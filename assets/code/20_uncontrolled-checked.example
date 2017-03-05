@@ -1,0 +1,11 @@
+class UncontrolledInput extends Component {
+
+  render() {
+    return (
+      <form>
+        <input type="radio" defaultChecked="true" />
+        <input type="checkbox" defaultChecked="true" />
+     </form>
+    );
+  }
+}

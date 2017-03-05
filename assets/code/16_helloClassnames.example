@@ -1,0 +1,12 @@
+import "./App.css";
+import classNames from "classnames";
+
+const HelloClass = (props) => {
+    const titleClass = classNames({
+      'btn': true,
+      'btn-pressed': props.isPressed,
+      'btn-over': !props.isPressed && props.isHovered
+    });
+
+    return <h1 className={titleClass}>Hello</h1>;
+}

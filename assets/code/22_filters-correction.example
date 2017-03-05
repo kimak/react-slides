@@ -1,0 +1,24 @@
+render() {
+
+    return (
+      <div>
+        ...
+        <ul>{
+          this.state.todos.map((item, index)=>{
+
+            const isTodoFiltered = ...
+            const isCompleteFiltered = ...
+            if(isTodoFiltered || isCompleteFiltered) return null;
+
+            return <TodoItem ... />
+          })
+        }</ul>
+        <div>
+          <span>Filtres: </span>
+          <button onClick={this.selectFilter.bind(this,"none")}>Tous</button>
+          <button onClick={this.selectFilter.bind(this,"complete")}>Terminé</button>
+          <button onClick={this.selectFilter.bind(this,"todo")}>A faire</button>
+        </div>
+      </div>
+    );
+  }

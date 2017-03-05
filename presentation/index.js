@@ -72,7 +72,15 @@ const images = {
     onereturn: require("../assets/intro/one-return.png"),
     lifecycle: require("../assets/intro/lifecycle.png"),
     mike: require("../assets/intro/mike.png"),
-    todos: require("../assets/intro/react-todo.gif")
+    todos: require("../assets/intro/react-todo.gif"),
+    input: require("../assets/intro/input-todo.gif"),
+    filter: require("../assets/intro/todos-filter.gif"),
+    github: require("../assets/intro/github-todos.png"),
+    forms: require("../assets/intro/forms.png"),
+    smartdumb: require("../assets/intro/smart&dumb.png"),
+    smart: require("../assets/intro/smart.png"),
+    dumb: require("../assets/intro/dumb.png"),
+    devtools: require("../assets/intro/devtools.png")
   }
 };
 
@@ -626,6 +634,44 @@ export default class Presentation extends React.Component {
 
                 <Slide transition={["fade"]} bgColor="blackcurrant">
                     <Heading size={4} textColor="white" textSize="30px">
+                      <span>classnames module</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/16_helloClassnames.example")}
+                      margin="20px auto"
+                    />   
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Resultat</span>
+                    </Heading>
+                    <CodePane
+                      lang="html"
+                      source={require("raw-loader!../assets/code/16_renderClassnames.example")}
+                      margin="20px auto"
+                    />
+                </Slide>
+
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Inline Styles</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/16_inline-style.example")}
+                      margin="20px auto"
+                    />   
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Resultat</span>
+                    </Heading>
+                    <CodePane
+                      lang="html"
+                      source={require("raw-loader!../assets/code/16_InlineStyle.render.example")}
+                      margin="20px auto"
+                    />
+                </Slide>
+
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
                       <span>Boucles et conditions</span>
                     </Heading>
                     <CodePane
@@ -658,13 +704,202 @@ export default class Presentation extends React.Component {
 
                 <Slide transition={["slide"]} bgColor="blackcurrant">
                     <Heading size={4} textColor="white" textSize="30px">
-                      <span>Exercice</span>
+                      <span>Exercice #1</span>
                     </Heading>
                     <ImageSlide
                       imageSrc={images.intro.todos}
                       imageHeight="550px"
                     />
                 </Slide>
+
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Repo github et correction</span>
+                    </Heading>
+                     <Link href="https://github.com/kimak/react-todos/compare/master...step1" target="_blank">
+                    <ImageSlide
+                      imageSrc={images.intro.github}
+                      imageHeight="550px"
+                    />
+                    </Link>
+                </Slide>
+
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Formulaire simple</span>
+                    </Heading>
+                     <Link href="https://facebook.github.io/react/docs/forms.html" target="_blank">
+                    <ImageSlide
+                      imageSrc={images.intro.forms}
+                      imageHeight="450px"
+                    />
+                    </Link>
+                    <Heading size={6} textColor="white"  textSize="24px">
+                      <div>Input / Textarea / Select</div>
+                    </Heading>
+                </Slide>
+
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Controlled Component</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/19_controlled-input.example")}
+                      margin="20px auto"
+                    />
+                    <Heading size={6} textColor="white"  textSize="24px">
+                      <div>La valeur peut être changé en js</div>
+                    </Heading>
+                </Slide>
+
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Uncontrolled Component</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/20_uncontrolled-input.example")}
+                      margin="20px auto"
+                    />
+                    <Heading size={6} textColor="white" textSize="24px">
+                      <div>La valeur ne peut pas être changé en js</div>
+                    </Heading>
+                </Slide>
+
+                  <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Uncontrolled Component</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/20_uncontrolled-checked.example")}
+                      margin="20px auto"
+                    />
+                    <Heading size={6} textColor="white" textSize="24px">
+                      <div>defaultChecked pour les type radio et checkbox</div>
+                    </Heading>
+                </Slide>
+
+
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Exercice #2</span>
+                    </Heading>
+                    <ImageSlide
+                      imageSrc={images.intro.input}
+                      imageHeight="350px"
+                    />
+                </Slide>
+
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Séparer l'application en "petits" composants</span>
+                    </Heading>
+                    <Link href="https://github.com/kimak/react-todos/compare/step3...step4?diff=split&expand=1&name=step4" target="_blank">
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/21_stateless-item.example")}
+                      margin="20px auto"
+                    />
+                    </Link>
+                    <Heading size={6} textColor="white" textSize="24px">
+                      <div>80% des composants peuvent être "stateless"</div>
+                    </Heading>
+                </Slide>
+
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Exercice #3</span>
+                    </Heading>
+                    <ImageSlide
+                      imageSrc={images.intro.filter}
+                      imageHeight="350px"
+                    />
+                    <Heading size={6} textColor="white" textSize="24px">
+                      <div>git checkout step4</div>
+                    </Heading>
+                </Slide>
+
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Aide Exercice #3</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/22_filters-correction.example")}
+                      margin="20px auto"
+                    />
+                </Slide>
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <ImageSlide title="Bonne architecture d'application"
+                      imageSrc={images.intro.lego}
+                      imageHeight="405px"
+                    />
+                    <Heading size={6} textColor="white" textSize="38px">
+                      <div>Forte cohésion + Faible couplage</div>
+                    </Heading>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <ImageSlide
+                      imageSrc={images.intro.smartdumb}
+                      imageHeight="250px"
+                    />
+                    <Heading size={6} textColor="white" textSize="24px">
+                      <div>Container & Presentational Components</div>
+                    </Heading>
+                </Slide>
+              <Slide transition={["zoom", "fade"]} bgColor="blackcurrant">
+              <Layout>
+                <Fill>
+                    <Heading size={6} textColor="white" textSize="38px">
+                      <div>Container</div>
+                    </Heading>
+                    <ImageSlide 
+                        imageSrc={images.intro.smart}
+                        imageHeight="222px"
+                      />
+                      <Title title=""
+                      list={[
+                        "How things work",
+                        "Provide data",
+                        "Manage State",
+                        "No Styles"
+                      ]}
+                    />
+                </Fill>
+                <Fill>
+                  <Heading size={6} textColor="white" textSize="38px">
+                      <div>Presentational</div>
+                  </Heading>
+                  <ImageSlide 
+                        imageSrc={images.intro.dumb}
+                        imageHeight="222px"
+                      />
+                  <Title title=""
+                      list={[
+                        "How things look",
+                        "No app dependencies",
+                        "Just props and callbacks",
+                        "Rarely have own state"
+                      ]}
+                    />
+                </Fill>
+              </Layout>
+              </Slide>
+
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={4} textColor="white" textSize="30px">
+                    <span>React Developer Tools</span>
+                  </Heading>
+                  <Link href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en" target="_blank">
+                    <ImageSlide
+                      imageSrc={images.intro.devtools}
+                      imageHeight="450px"
+                    />
+                  </Link>
+              </Slide>
+
         </Deck>
       </Spectacle>
     );
