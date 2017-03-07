@@ -93,7 +93,11 @@ const images = {
     hybridList: require("../assets/native/hybrid-list.png"),
     crossPlatform: require("../assets/native/crossPlatform.png"),
     jscore: require("../assets/native/jscore.png"),
-    jsv8: require("../assets/native/jsv8.png"),
+    debugger: require("../assets/native/native-debugger.png"),
+    logo: require("../assets/native/native_logo.png"),
+    who: require("../assets/native/who.png"),
+    recompile: require("../assets/native/recompile.gif"),
+    installation: require("../assets/native/installation.png"),     
   }
 };
 
@@ -912,6 +916,17 @@ export default class Presentation extends React.Component {
                     />
                   </Link>
               </Slide>
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                  <Heading size={4} textColor="dandelion" textSize="38px">
+                    <span>React Native</span>
+                  </Heading>      
+                  <Image
+                      src={images.native.logo}
+                    />
+                  <Heading size={4} textColor="white" textSize="30px">
+                    <div>Build Native Mobile Apps<br />using JavaScript and React</div>
+                  </Heading>
+              </Slide>
               <Slide transition={["zoom"]} bgColor="blackcurrant">
                 <Heading size={6} textColor="dandelion" textSize="42px">
                   React Native
@@ -1000,7 +1015,7 @@ export default class Presentation extends React.Component {
               </Slide>              
               <Slide transition={["fade"]} bgColor="blackcurrant">
                   <Heading size={4} textColor="white" textSize="30px">
-                    <span>Utilise HTML5 dans un « navigateur » embarqué</span>
+                    <span>L'hybride = HTML5 dans un « navigateur » embarqué</span>
                   </Heading>
                     <ImageSlide
                       imageSrc={images.native.hybridList}
@@ -1009,38 +1024,98 @@ export default class Presentation extends React.Component {
               </Slide>             
               <Slide transition={["fade"]} bgColor="blackcurrant">
                   <Heading size={4} textColor="white" textSize="30px">
-                    <span>Piloter des composants natifs en JavaScript  </span>
+                    <span>React Native est différent</span>
                   </Heading>
                     <ImageSlide
                       imageSrc={images.native.crossPlatform}
                       imageHeight="403px"
                     />
+                  <Heading size={4} textColor="white" textSize="30px">
+                    <span>"Pilote" des composants natifs via JavaScript  </span>
+                  </Heading>
               </Slide>         
               <Slide transition={["fade"]} bgColor="blackcurrant">
                   <Heading size={4} textColor="white" textSize="30px">
-                    <span>JavascriptCore introduis sous IOS7</span>
+                    <span>Grâce à JavascriptCore introduis depuis IOS7</span>
                   </Heading>
+                  <Link href="http://trac.webkit.org/wiki/JavaScriptCore" target="_blank">
                     <ImageSlide
                       imageSrc={images.native.jscore}
                       imageHeight="403px"
                     />
-              </Slide>      
+                  </Link>
+                  <Heading size={4} textColor="white" textSize="30px">
+                    <span>JavascriptCore est aussi utilisé pour Android</span>
+                  </Heading>
+              </Slide>        
               <Slide transition={["fade"]} bgColor="blackcurrant">
                   <Heading size={4} textColor="white" textSize="30px">
-                    <span>Moteur chrome V8 sous Android</span>
+                    <span>Debugging avec Chrome</span>
                   </Heading>
                     <ImageSlide
-                      imageSrc={images.native.jsv8}
-                      imageHeight="403px"
+                      imageSrc={images.native.debugger}
+                      imageHeight="503px"
                     />
-              </Slide>     
-              <Slide transition={["fade"]} bgColor="blackcurrant">
                   <Heading size={4} textColor="white" textSize="30px">
-                    <span>React Native description</span>
+                    <span>Fonctionnement via Websocket</span>
                   </Heading>
               </Slide>
-              
-
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Hello React Native</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/23_helloNative.example")}
+                      margin="20px auto"
+                    />
+                    <Appear><Heading size={4} textColor="white" textSize="30px">
+                    <span>LEARN ONCE, WRITE ANYWHERE</span>
+                  </Heading></Appear>
+                </Slide>  
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                  <Heading size={4} textColor="white" textSize="30px">
+                    <span>Mise à jour sans compilation</span>
+                  </Heading>
+                    <ImageSlide
+                      imageSrc={images.native.recompile}
+                      imageHeight="253px"
+                    />
+                  <Heading size={4} textColor="white" textSize="30px">
+                    <span>Gain de temps</span>
+                  </Heading>
+              </Slide>   
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                      <Heading size={4} textColor="white" textSize="30px">
+                        <span>Native Modules: Possibilité de coder en natif</span>
+                      </Heading>
+                      <CodePane
+                        lang="jsx"
+                        source={require("raw-loader!../assets/code/24_nativeCode.example")}
+                        margin="20px auto"
+                      />
+                      <Appear><Heading size={4} textColor="white" textSize="30px">
+                      <span>Objective-C, Java, Swift</span>
+                    </Heading></Appear>
+                  </Slide>  
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <ImageSlide title={<span>Applis utilisant<span style={{ color: dandelion }}> React Native</span></span>}
+                      subtitle={<CustomLink href="https://facebook.github.io/react-native/showcase.html">Et bien d'autres...</CustomLink>}
+                      imageSrc={images.native.who}
+                      imageHeight="393px"
+                    />
+                </Slide>
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                   <Heading size={4} textColor="white" textSize="30px">
+                        <span>Installation</span>
+                    </Heading>
+                  <CustomLink href="https://facebook.github.io/react-native/docs/getting-started.html">
+                    <ImageSlide
+                        imageSrc={images.native.installation}
+                        imageHeight="453px"
+                      />
+                    </CustomLink>
+                  </Slide>  
         </Deck>
       </Spectacle>
     );
