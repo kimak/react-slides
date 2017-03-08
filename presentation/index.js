@@ -97,7 +97,8 @@ const images = {
     logo: require("../assets/native/native_logo.png"),
     who: require("../assets/native/who.png"),
     recompile: require("../assets/native/recompile.gif"),
-    installation: require("../assets/native/installation.png"),     
+    installation: require("../assets/native/installation.png"),  
+    yoga: require("../assets/native/yoga.png"),    
   }
 };
 
@@ -1115,7 +1116,27 @@ export default class Presentation extends React.Component {
                         imageHeight="453px"
                       />
                     </CustomLink>
-                  </Slide>  
+                </Slide>  
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>React Native Layout</span>
+                    </Heading>
+                    <CustomLink href="https://facebook.github.io/yoga">
+                    <ImageSlide
+                        imageSrc={images.native.yoga}
+                        imageHeight="453px"
+                      />
+                    </CustomLink>
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Vous connaissez Flexbox ?</span>
+                    </Heading>
+                </Slide>
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                   <Heading size={4} textColor="white" textSize="30px">
+                        <span>View component</span>
+                    </Heading>
+                    <iframe  style={{width: '800px', height: '540px'}} frameBorder="0" allowFullScreen="" src="http://cdn.rawgit.com/dabbott/react-native-web-player/gh-v1.8.1/index.html#code=import%20React%2C%20%7B%20Component%20%7D%20from%20'react'%0Aimport%20%7B%20AppRegistry%2C%20View%2C%20StyleSheet%20%7D%20from%20'react-native'%0A%0Aclass%20App%20extends%20Component%20%7B%0A%20%20render()%20%7B%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.container%7D%3E%0A%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.box%7D%20%2F%3E%0A%20%20%20%20%20%20%3C%2FView%3E%0A%20%20%20%20)%0A%20%20%7D%0A%7D%0A%0Aconst%20styles%20%3D%20StyleSheet.create(%7B%0A%20%20container%3A%20%7B%0A%20%20%20%20flex%3A%201%2C%0A%20%20%20%20justifyContent%3A%20'center'%2C%0A%20%20%20%20alignItems%3A%20'center'%2C%0A%20%20%7D%2C%0A%20%20box%3A%20%7B%0A%20%20%20%20width%3A%20200%2C%0A%20%20%20%20height%3A%20200%2C%0A%20%20%20%20backgroundColor%3A%20'skyblue'%2C%0A%20%20%20%20borderWidth%3A%202%2C%0A%20%20%20%20borderColor%3A%20'steelblue'%2C%0A%20%20%20%20borderRadius%3A%2020%2C%0A%20%20%7D%2C%0A%7D)%0A%0AAppRegistry.registerComponent('App'%2C%20()%20%3D%3E%20App)%0A&amp;width=260&amp;scale=0.75&amp;fullscreen=true&amp;styles=%7B%22tab%22%3A%7B%22backgroundColor%22%3A%22rgb(250%2C250%2C250)%22%7D%2C%22header%22%3A%7B%22backgroundColor%22%3A%22rgb(250%2C250%2C250)%22%2C%22boxShadow%22%3A%22rgba(0%2C%200%2C%200%2C%200.2)%200px%201px%201px%22%2C%22zIndex%22%3A10%7D%2C%22headerText%22%3A%7B%22color%22%3A%22%23AAA%22%2C%22fontWeight%22%3A%22normal%22%7D%2C%22transpilerHeader%22%3A%7B%22backgroundColor%22%3A%22rgb(240%2C240%2C240)%22%2C%22boxShadow%22%3A%22rgba(0%2C%200%2C%200%2C%200.2)%200px%201px%201px%22%2C%22zIndex%22%3A10%7D%2C%22transpilerHeaderText%22%3A%7B%22color%22%3A%22%23888%22%2C%22fontWeight%22%3A%22normal%22%7D%2C%22tabText%22%3A%7B%22color%22%3A%22%23AAA%22%7D%2C%22tabTextActive%22%3A%7B%22color%22%3A%22%23000%22%7D%7D&amp;panes=%5B%22editor%22%2C%22player%22%5D"></iframe>                    
+                </Slide>
         </Deck>
       </Spectacle>
     );
