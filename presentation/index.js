@@ -103,6 +103,14 @@ const images = {
     installTest: require("../assets/native/install-test.png"),   
     todo1: require("../assets/native/todo1.png"), 
     todo2: require("../assets/native/todo2.png"),
+  },
+  redux: {
+    logo: require("../assets/redux/logo.png"),
+    flux: require("../assets/redux/flux.png"),
+    wichflux: require("../assets/redux/wichflux.png"),
+    npmtrends: require("../assets/redux/npm-trends.png"),
+    reacteurope: require("../assets/redux/react-europe.png"),
+    reduximage: require("../assets/redux/redux-image.png"),
   }
 };
 
@@ -1255,8 +1263,193 @@ export default class Presentation extends React.Component {
                       imageSrc={images.native.todo2}
                       imageHeight="550px"
                     />
+                </Slide>              
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <Heading fit size={1} >
+                      <span style={{ color: dandelion }}>React</span> est le V de<span style={{opacity: 0.5}}> M</span>V<span style={{opacity: 0.5}}>C</span>
+                    </Heading>
+                    <Appear>
+                      <Heading size={4} textColor="white" textSize="30px">
+                      <div>Comment on fait pour le reste ?</div>
+                      </Heading>
+                    </Appear>
                 </Slide>
-
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                  <Heading size={4} textColor="dandelion" textSize="38px">
+                    <span>Flux: architecture proposé par Facebook</span>
+                  </Heading>      
+                    <Image
+                        src={images.redux.flux}
+                        height="250px"
+                      />
+                  <Heading size={4} textColor="white" textSize="30px">
+                    <div>Un design pattern basé sur Store, Action et dispatcher</div>
+                  </Heading>
+              </Slide>
+              <Slide transition={["fade"]} bgColor="blackcurrant"> 
+                  <Heading size={4} textColor="white" textSize="38px">
+                    <span>2014</span>
+                  </Heading>   
+                  <CustomLink href="https://github.com/kriasoft/react-starter-kit/issues/22">
+                    <Image
+                        src={images.redux.wichflux}
+                        height="400px"
+                      />
+                  </CustomLink>  
+                  <Heading size={4} textColor="dandelion" textSize="38px">
+                    <span>quelle librairie doit on utiliser...</span>
+                  </Heading>     
+              </Slide>
+              <Slide transition={["fade"]} bgColor="blackcurrant"> 
+                  <Heading size={4} textColor="white" textSize="38px">
+                    <span>React Europe 2015</span>
+                  </Heading>   
+                  <CustomLink href="https://2015.react-europe.org/#schedule">
+                  <Image
+                      src={images.redux.reacteurope}
+                      height="150px"
+                    />
+                  </CustomLink>  
+                  <Heading size={4} textColor="dandelion" textSize="38px">
+                    <span>Dan Abramov met tout le monde d'accord</span>
+                  </Heading>     
+              </Slide>
+              <Slide transition={["fade"]} bgColor="blackcurrant"> 
+                  <Heading size={4} textColor="white" textSize="38px">
+                    <span>2016</span>
+                  </Heading>   
+                  <CustomLink href="http://www.npmtrends.com/redux-vs-reflux-vs-flummox-vs-alt-vs-flux">
+                  <Image
+                      src={images.redux.npmtrends}
+                      height="400px"
+                    />
+                  </CustomLink>  
+                  <Heading size={4} textColor="dandelion" textSize="38px">
+                    <span>Redux</span>
+                  </Heading>     
+              </Slide>
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                  <Heading size={4} textColor="dandelion" textSize="38px">
+                    <span>Redux</span>
+                  </Heading>      
+                  <Image
+                      src={images.redux.logo}
+                      imageHeight="10px"
+                    />
+                  <Heading size={4} textColor="white" textSize="30px">
+                    <div>Redux is a predictable state container<br />for JavaScript apps.</div>
+                  </Heading>
+              </Slide>
+              <Slide transition={["zoom"]} bgColor="blackcurrant">
+                <ImageSlide title="Redux itself is very simple."
+                  imageSrc={images.redux.reduximage}
+                  imageHeight="493px"
+                />
+              </Slide>
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Core concept</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/redux/01_reduxCore.example")}
+                      margin="20px auto"
+                    />
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Your app’s state is described as a plain object.</span>
+                    </Heading>
+              </Slide>  
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>To change something in the state</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/redux/02_reduxAction.example")}
+                      margin="20px auto"
+                    />
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>you need to dispatch actions.</span>
+                    </Heading>
+              </Slide> 
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>State and actions are managed together<br />by a function called a <span style={{ color: dandelion }}>reducer</span>. </span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/redux/03_reduxReducer.example")}
+                      margin="20px auto"
+                    />
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Example: todos <span style={{ color: dandelion }}>Reducer</span></span>
+                    </Heading>
+              </Slide> 
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>The Filter <span style={{ color: dandelion }}>Reducer</span></span>
+                    </Heading>     
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/redux/04_reduxFilter.example")}
+                      margin="20px auto"
+                    />               
+                    <Heading size={4} textColor="white" textSize="22px">
+                      <span>It would be hard to write one function for a big app,<br />so we write smaller functions managing parts of the state</span>
+                    </Heading>
+              </Slide> 
+              <Slide transition={["fade"]} bgColor="blackcurrant">                    
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Another reducer manages the complete state <br />of our app by calling those two  <span style={{ color: dandelion }}>reducers</span></span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/redux/05_mainReducer.example")}
+                      margin="20px auto"
+                    />
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Todos App <span style={{ color: dandelion }}>Reducer</span></span>
+                    </Heading>
+              </Slide> 
+              <Slide transition={["zoom"]} bgColor="blackcurrant">
+                    <Title title={<span><span style={{ color: dandelion }}>Redux</span> Three Principles</span>}
+                      list={[
+                        "Single source of truth",
+                        "State is read-only",
+                        "Changes are made with functions (Reducer)"
+                      ]}
+                    />
+              </Slide>
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>let store = createStore()</span>
+                    </Heading>     
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/redux/06_createStore.example")}
+                      margin="20px auto"
+                    />          
+              </Slide> 
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>store.dispatch()</span>
+                    </Heading>     
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/redux/07_storeDispatch.example")}
+                      margin="20px auto"
+                    />          
+              </Slide> 
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>store.getState()</span>
+                    </Heading>     
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/redux/08_getState.example")}
+                      margin="20px auto"
+                    />          
+              </Slide> 
         </Deck>
       </Spectacle>
     );

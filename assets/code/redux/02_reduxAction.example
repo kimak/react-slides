@@ -1,0 +1,3 @@
+dispatch({ type: 'ADD_TODO', label: 'Go to swimming pool' });
+dispatch({ type: 'TOGGLE_TODO', index: 1 });
+dispatch({ type: 'SET_VISIBILITY_FILTER', filter: 'complete' });

@@ -1,0 +1,16 @@
+console.log(store.getState())
+
+/* Prints
+{
+  filter: 'none',
+  todos: [
+    {
+      label: 'Consider using Redux',
+      completed: true,
+    },
+    {
+      label: 'Keep all state in a single tree',
+      completed: false
+    }
+  ]
+}

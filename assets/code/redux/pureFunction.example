@@ -1,0 +1,11 @@
+var values = { a: 1 };
+
+function pureFunction ( a ) {
+  var b = 1;
+
+  a = a * b + 2;
+
+  return a;
+}
+
+var c = pureFunction( values.a );
