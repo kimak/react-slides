@@ -1,0 +1,23 @@
+import { connect } from 'react-redux'
+
+
+function mapDispatchToProps(dispatch) {
+  return {
+    onTodoClick: (index) => {
+      dispatch({ type: 'TOGGLE_TODO', index});
+    }
+  }
+}
+
+function mapStateToProps(state) {
+  return {
+    todos: state.todos
+  }
+}
+
+const Container = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Component)
+
+export default Container

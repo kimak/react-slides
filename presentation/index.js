@@ -111,6 +111,7 @@ const images = {
     npmtrends: require("../assets/redux/npm-trends.png"),
     reacteurope: require("../assets/redux/react-europe.png"),
     reduximage: require("../assets/redux/redux-image.png"),
+    shema: require("../assets/redux/redux-arch.jpg"),
   }
 };
 
@@ -1341,7 +1342,7 @@ export default class Presentation extends React.Component {
                   </Heading>
               </Slide>
               <Slide transition={["zoom"]} bgColor="blackcurrant">
-                <ImageSlide title="Redux itself is very simple."
+                <ImageSlide title="Redux"
                   imageSrc={images.redux.reduximage}
                   imageHeight="493px"
                 />
@@ -1420,6 +1421,12 @@ export default class Presentation extends React.Component {
                       ]}
                     />
               </Slide>
+              <Slide transition={["zoom"]} bgColor="blackcurrant">
+                <ImageSlide title="Architecture"
+                  imageSrc={images.redux.shema}
+                  imageHeight="493px"
+                />
+              </Slide>
               <Slide transition={["fade"]} bgColor="blackcurrant">
                     <Heading size={4} textColor="white" textSize="30px">
                       <span>let store = createStore()</span>
@@ -1449,6 +1456,78 @@ export default class Presentation extends React.Component {
                       source={require("raw-loader!../assets/code/redux/08_getState.example")}
                       margin="20px auto"
                     />          
+              </Slide> 
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>React + Redux</span>
+                    </Heading>        
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/redux/09_react-redux.example")}
+                      margin="20px auto"
+                    />      
+              </Slide> 
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span style={{ color: dandelion }}> > Let's go step by step !</span>
+                      <Title
+                          list={[
+                            "npm install redux --save-dev",
+                            "npm install react-redux --save-dev",
+                          ]}
+                        />
+                    </Heading>      
+              </Slide> 
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Step #1: src/App.js</span>
+                    </Heading>        
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/redux/10_pratique#1.example")}
+                      margin="20px auto"
+                    />      
+              </Slide> 
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Step #2: src/store.js</span>
+                    </Heading>        
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/redux/11_pratique#2.example")}
+                      margin="20px auto"
+                    />      
+              </Slide> 
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Step #3: src/reducers/todos.js</span>
+                    </Heading>        
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/redux/12_pratique#3.example")}
+                      margin="20px auto"
+                    />      
+              </Slide> 
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Step #4: src/containers/Todos.js</span>
+                    </Heading>        
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/redux/13_pratique#4.example")}
+                      margin="20px auto"
+                    />      
+              </Slide> 
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Step #5: src/containers/Todo.js</span>
+                    </Heading>    
+                    <Title
+                          title="?"
+                          list={[
+                            "A vous de jouer :)",
+                          ]}
+                        />
               </Slide> 
         </Deck>
       </Spectacle>

@@ -1,3 +1,8 @@
 import { combineReducers, createStore } from 'redux';
+import { visibilityFilter } from './reducers/visibilityFilter';
+import { todos } from './reducers/todos';
+
 let reducer = combineReducers({ visibilityFilter, todos });
 let store = createStore(reducer);
+
+export default store
