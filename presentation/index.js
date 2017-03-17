@@ -112,6 +112,7 @@ const images = {
     reacteurope: require("../assets/redux/react-europe.png"),
     reduximage: require("../assets/redux/redux-image.png"),
     shema: require("../assets/redux/redux-arch.jpg"),
+    devtools: require("../assets/redux/devtools.gif"),
   }
 };
 
@@ -1467,6 +1468,15 @@ export default class Presentation extends React.Component {
                       margin="20px auto"
                     />      
               </Slide> 
+              <Slide transition={["zoom"]} bgColor="blackcurrant">
+
+                <CustomLink href="http://extension.remotedev.io/#installation">
+                <ImageSlide title="Redux devtools"
+                  imageSrc={images.redux.devtools}
+                  imageHeight="493px"
+                />
+                </CustomLink>
+              </Slide>
               <Slide transition={["fade"]} bgColor="blackcurrant">
                     <Heading size={4} textColor="white" textSize="30px">
                       <span style={{ color: dandelion }}> > Let's go step by step !</span>
