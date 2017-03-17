@@ -1257,14 +1257,16 @@ export default class Presentation extends React.Component {
                     <iframe  style={{width: '800px', height: '540px'}} frameBorder="0" allowFullScreen="" src="http://cdn.rawgit.com/dabbott/react-native-web-player/gh-v1.2.6/index.html#code=import%20React%2C%20%7B%20Component%20%7D%20from%20'react'%3B%0Aimport%20%7B%20AppRegistry%2C%20TextInput%20%7D%20from%20'react-native'%3B%0A%0Aclass%20UselessTextInput%20extends%20Component%20%7B%0A%20%20constructor(props)%20%7B%0A%20%20%20%20super(props)%3B%0A%20%20%20%20this.state%20%3D%20%7B%20text%3A%20'Useless%20Placeholder'%20%7D%3B%0A%20%20%7D%0A%0A%20%20render()%20%7B%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%3CTextInput%0A%20%20%20%20%20%20%20%20style%3D%7B%7Bheight%3A%2040%2C%20borderColor%3A%20'gray'%2C%20borderWidth%3A%201%7D%7D%0A%20%20%20%20%20%20%20%20onChangeText%3D%7B(text)%20%3D%3E%20this.setState(%7Btext%7D)%7D%0A%20%20%20%20%20%20%20%20value%3D%7Bthis.state.text%7D%0A%20%20%20%20%20%20%2F%3E%0A%20%20%20%20)%3B%0A%20%20%7D%0A%7D%0A%0A%2F%2F%20App%20registration%20and%20rendering%0AAppRegistry.registerComponent('AwesomeProject'%2C%20()%20%3D%3E%20UselessTextInput)%3B&assetRoot=https%3A%2F%2Ffacebook.github.io%2Freact-native"></iframe>                    
                 </Slide>
 
-                <Slide transition={["slide"]} bgColor="blackcurrant">
+                <Slide transition={["slide"]} bgColor="blackcurrant">                                 
                     <Heading size={4} textColor="white" textSize="30px">
                       <span>Exercice #2</span>
                     </Heading>
-                    <ImageSlide
-                      imageSrc={images.native.todo2}
-                      imageHeight="550px"
-                    />
+                    <CustomLink href="https://github.com/kimak/react-todos/compare/step7...react-native?expand=1">
+                      <ImageSlide
+                        imageSrc={images.native.todo2}
+                        imageHeight="550px"
+                      />
+                    </CustomLink>  
                 </Slide>              
                 <Slide transition={["slide"]} bgColor="blackcurrant">
                     <Heading fit size={1} >
