@@ -1484,8 +1484,8 @@ export default class Presentation extends React.Component {
                       <span style={{ color: dandelion }}> > Let's go step by step !</span>
                       <Title
                           list={[
-                            "npm install redux --save-dev",
-                            "npm install react-redux --save-dev",
+                            "npm install redux --save",
+                            "npm install react-redux --save",
                           ]}
                         />
                     </Heading>      

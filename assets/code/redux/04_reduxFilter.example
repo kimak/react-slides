@@ -1,5 +1,5 @@
 // the filter reducer receive all actions and return a new filter state
-function visibilityFilter(state = 'SHOW_ALL', action) {
+function visibilityFilter(state = 'none', action) {
   if (action.type === 'SET_VISIBILITY_FILTER') {
     return action.filter;
   } else {
