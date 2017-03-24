@@ -1,0 +1,9 @@
+test('failed ! toBe use ====', () => {
+  const data = {one: 1, two: 2};
+  expect(data).toBe({one: 1, two: 2});
+});
+
+test('Success ! toEqual test recursive properties', () => {
+  const data = {one: 1, two: 2};
+  expect(data).toEqual({one: 1, two: 2});
+});

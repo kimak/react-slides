@@ -1,0 +1,8 @@
+fetch('https://api.spotify.com/v1/artists/3Dw9w3jnmr58ocgxiwITcq/albums?limit=10')
+.then(function(response) {
+    return response.json();
+}).then(function(jsonData) {
+    console.log(jsonData);
+}).catch(function(err) {
+    console.log("Opps, Something went wrong!", err);
+})

@@ -113,6 +113,21 @@ const images = {
     reduximage: require("../assets/redux/redux-image.png"),
     shema: require("../assets/redux/redux-arch.jpg"),
     devtools: require("../assets/redux/devtools.gif"),
+  },
+  fetch: {
+    clientserver: require("../assets/fetch/client-server.png"),
+    caniuse: require("../assets/fetch/caniuse.png"),
+    abort: require("../assets/fetch/abort.png"),
+    hoc: require("../assets/fetch/hoc.png"),
+  },
+  test: {
+    douter: require("../assets/test/douter.jpg"),
+    pyramid: require("../assets/test/test-pyramid.png"),
+    tdd: require("../assets/test/tdd.png"),
+    bdd: require("../assets/test/bdd.png"),
+    pr: require("../assets/test/pr.png"),
+    expect: require("../assets/test/expect.png"),
+    snapshot: require("../assets/test/snapshot.png"),
   }
 };
 
@@ -1541,6 +1556,326 @@ export default class Presentation extends React.Component {
                           ]}
                         />
               </Slide> 
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span>Echange client/serveur</span>
+                  </Heading>
+                    <ImageSlide                    
+                      imageSrc={images.fetch.clientserver}
+                      imageHeight="200px"
+                      padding="50px"
+                    />
+                  <Heading size={2} textSize="22px"  textColor="white">
+                    <span>Requête Http (Ajax)</span>
+                  </Heading>
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span>Une requête Ajax hier...</span>
+                  </Heading>
+                  <Heading size={2} textSize="22px" textColor="white">
+                    <span>(Asynchronous Javascript And Xml)</span>
+                  </Heading>
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/fetch/01_ajax.example")}
+                    margin="20px auto"
+                  />    
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span>Une requête HTTP aujourd'hui: Fetch</span>
+                  </Heading>
+                  <Heading size={2} textSize="22px" textColor="white">
+                    <span>(https://fetch.spec.whatwg.org/)</span>
+                  </Heading>
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/fetch/02_fetch.example")}
+                    margin="20px auto"
+                  />    
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span>Fetch support</span>
+                  </Heading>
+                 <CustomLink href="http://caniuse.com/#search=fetch">
+                    <ImageSlide
+                      imageSrc={images.fetch.caniuse}
+                      imageHeight="493px"
+                    />
+                </CustomLink>                   
+                <Heading size={1} textSize="22px">
+                    <span>Utilisation d'un polyfill (intégré avec create-react-app)</span>
+                  </Heading>
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span>Une limitation de Fetch ?</span>
+                  </Heading>
+                  <CustomLink href="https://github.com/whatwg/fetch/issues/27">
+                    <ImageSlide
+                      imageSrc={images.fetch.abort}
+                      imageHeight="493px"
+                    />
+                </CustomLink>    
+                  <Heading size={1} textSize="22px">
+                    <span>Possible avec les modules npm: axios, superagent etc.</span>
+                  </Heading>
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span>React Pattern</span>
+                  </Heading>
+                 <CustomLink href="https://facebook.github.io/react/docs/higher-order-components.html">
+                    <ImageSlide
+                      imageSrc={images.fetch.hoc}
+                      imageHeight="493px"
+                    />
+                </CustomLink>   
+                  <Heading size={1} textSize="22px">
+                    <span>High Order Component (HOC)</span>
+                  </Heading> 
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span style={{ color: dandelion }}> > Let's go !</span>
+                  </Heading>
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/fetch/03_hoc.example")}
+                    margin="20px auto"
+                  />   
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} >
+                    <span>Test <span style={{ color: dandelion }}>unitaire</span></span>
+                  </Heading>
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <BlockQuote>
+                      <Quote textColor="white" textSize="48px">“Before software can be reusable it first has to be usable.”</Quote>
+                      <Cite textColor="dandelion"><CustomLink href="https://en.wikipedia.org/wiki/Ralph_Johnson_(computer_scientist)">Ralph Johnson (Design Patterns)</CustomLink></Cite>
+                  </BlockQuote>
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                <ImageSlide title="Tester c'est douter ?"
+                  imageSrc={images.test.douter}
+                  imageHeight="493px"
+                />
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <BlockQuote>
+                      <Quote textColor="white" textSize="48px">“Quality is never an accident<br />it is always the result of intelligent effort.”</Quote>
+                      <Cite textColor="dandelion"><CustomLink href="https://fr.wikipedia.org/wiki/John_Ruskin">John Ruskin (écrivain, poète, peintre ...)</CustomLink></Cite>
+                  </BlockQuote>
+              </Slide>       
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Title
+                        title="Les types de test"
+                        list={[
+                          <span><span style={{ color: dandelion }}>Unitaire:</span><br /><span style={{ fontSize: "24px" }}>Tester des morceaux de code isolés (fonctions)</span></span>,
+                          <span><span style={{ color: dandelion }}>Fonctionnel:</span><br /><span style={{ fontSize: "24px" }}>Tester automatiquement les comportements attendus via des scénarios.</span></span>,
+                          <span><span style={{ color: dandelion }}>Manuel:</span><br /><span style={{ fontSize: "24px" }}>Tester manuellement les comportements attendus dans les spécifications.</span></span>,
+                        ]}
+                      />
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                <ImageSlide title="Les types de test"
+                  imageSrc={images.test.pyramid}
+                  imageHeight="493px"
+                />
+              </Slide>  
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Title title="Méthodologie"
+                    list={[
+                      <span><span style={{ color: dandelion }}>TDD: </span>développement piloté par les tests</span>,
+                      <span><span style={{ color: dandelion }}>BDD: </span>développement piloté par le fonctionnel</span>,
+                      <span><span style={{ color: dandelion }}>Code review: </span>Relecture de code manuelle</span>
+                    ]}
+                  />
+              </Slide>      
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                <ImageSlide title="Test Driven Development"
+                  imageSrc={images.test.tdd}
+                  imageHeight="493px"
+                />
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                <ImageSlide title="Behavior driven development"
+                  imageSrc={images.test.bdd}
+                  imageHeight="493px"
+                />
+              </Slide>   
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                <CustomLink href="https://help.github.com/articles/about-pull-requests">
+                <ImageSlide title="Revue de code"
+                  imageSrc={images.test.pr}
+                  imageHeight="493px"
+                />
+                </CustomLink>                
+                <Heading size={1} textSize="22px">
+                  <span>PR: Pull Request</span>
+                </Heading> 
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span style={{ color: dandelion }}> > Let's go !</span><span> $ npm test</span>
+                  </Heading>   
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/test/01_hello.example")}
+                    margin="20px auto"
+                  />                
+                <Heading size={1} textSize="22px">
+                  <span>src/jest.js</span>
+                </Heading>      
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/test/02_test.example")}
+                    margin="20px auto"
+                  />       
+                <Heading size={1} textSize="22px">
+                  <span>src/jest.test.js</span>
+                </Heading> 
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span style={{ color: dandelion }}>Matchers</span>
+                  </Heading>   
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/test/03_matcher.example")}
+                    margin="20px auto"
+                  />            
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span style={{ color: dandelion }}>Matchers</span>
+                  </Heading>   
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/test/04_matcher.example")}
+                    margin="20px auto"
+                  />            
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span style={{ color: dandelion }}>Numbers</span>
+                  </Heading>   
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/test/05_numbers.example")}
+                    margin="20px auto"
+                  />            
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span style={{ color: dandelion }}>Strings</span>
+                  </Heading>   
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/test/06_strings.example")}
+                    margin="20px auto"
+                  />            
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span style={{ color: dandelion }}>Array</span>
+                  </Heading>   
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/test/07_array.example")}
+                    margin="20px auto"
+                  />            
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span style={{ color: dandelion }}>Exception</span>
+                  </Heading>   
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/test/08_exception.example")}
+                    margin="20px auto"
+                  />            
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                <CustomLink href="https://facebook.github.io/jest/docs/expect.html">
+                <ImageSlide title="Etc."
+                  imageSrc={images.test.expect}
+                  imageHeight="493px"
+                />
+                </CustomLink>    
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span style={{ color: dandelion }}>Async</span>
+                  </Heading>   
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/test/09_async.example")}
+                    margin="20px auto"
+                  />            
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span style={{ color: dandelion }}>Setup</span>
+                  </Heading>   
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/test/10_setup.example")}
+                    margin="20px auto"
+                  />            
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span style={{ color: dandelion }}>Mocks</span>
+                  </Heading>   
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/test/11_mocks.example")}
+                    margin="20px auto"
+                  />            
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span style={{ color: dandelion }}>TDD Example</span>
+                  </Heading>   
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/test/12_filter.example")}
+                    margin="20px auto"
+                  />            
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span style={{ color: dandelion }}>Filter reducer</span>
+                  </Heading>   
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/test/13_filter.example")}
+                    margin="20px auto"
+                  />            
+              </Slide>
+              <Slide transition={["fade"]} bgColor="blackcurrant">
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>Test: src/reducers/todo.test.js</span>
+                    </Heading>    
+                    <Title
+                          title="?"
+                          list={[
+                            "A vous de jouer :)",
+                          ]}
+                        />
+              </Slide>  
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                <CustomLink href="https://facebook.github.io/jest/docs/snapshot-testing.html#content">
+                <ImageSlide title="Snapshot ui testing"
+                  imageSrc={images.test.snapshot}
+                  imageHeight="493px"
+                />
+                </CustomLink>
+              </Slide>
         </Deck>
       </Spectacle>
     );

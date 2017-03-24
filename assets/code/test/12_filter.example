@@ -1,0 +1,5 @@
+import visibilityFilter from './filter';
+
+test('return initialState to be none by default', () => {
+  expect(visibilityFilter()).toBe('none');
+});

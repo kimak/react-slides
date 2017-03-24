@@ -1,0 +1,27 @@
+if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+  request = new XMLHttpRequest();
+} else if (window.ActiveXObject) { // IE
+  try {
+    request = new ActiveXObject('Msxml2.XMLHTTP');
+  }
+  catch (e) {
+    try {
+      request = new ActiveXObject('Microsoft.XMLHTTP');
+    }
+    catch (e) {}
+  }
+}
+
+function onLoadListener() {
+  var data = JSON.parse(this.responseText);
+  console.log(data);
+}
+
+function onErrorListener(err) {
+  console.log('XHR Error :', err);
+}
+
+request.onload = onLoadListener;
+request.onerror = onErrorListener;
+request.open('get', 'https://api.acme.com/some.json', true);
+request.send();
