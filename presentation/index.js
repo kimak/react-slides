@@ -1715,7 +1715,7 @@ export default class Presentation extends React.Component {
                 />
                 </CustomLink>                
                 <Heading size={1} textSize="22px">
-                  <span>PR: Pull Request</span>
+                  <span>PR: Pull Request -</span>
                 </Heading> 
               </Slide>
               <Slide transition={["slide"]} bgColor="blackcurrant">
