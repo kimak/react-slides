@@ -4,8 +4,9 @@ function todos(state = [], action) {
     case 'ADD_TODO':
         return state.concat([{ label: action.label, completed: false }]);
     case 'TOGGLE_TODO':
-        return state.map((todo, id) => action.id === id ? { label: todo.label, completed: !todo.completed } : todo
-    )
+        const newState = state.concat();
+        newState[action.index].complete = !newState[action.index].complete;
+        return newState;
     default:
         return state;
     }
