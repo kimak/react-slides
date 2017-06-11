@@ -1212,7 +1212,7 @@ export default class Presentation extends React.Component {
                     <Title
                           title="?"
                           list={[
-                            "",
+                            "Objectif: deplacer la logique vers le container",
                             "A vous de jouer :)",
                           ]}
                         />
