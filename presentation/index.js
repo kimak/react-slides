@@ -131,7 +131,11 @@ const images = {
   }
 };
 
-preloader(images);
+
+preloader(Object.values(images.intro));
+preloader(Object.values(images.redux));
+preloader(Object.values(images.fetch));
+//preloader(images);
 
 const dandelion = "#FFE163";
 const theme = createTheme({
