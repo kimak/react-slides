@@ -1842,10 +1842,19 @@ export default class Presentation extends React.Component {
                 <Slide transition={["fade"]} bgColor="blackcurrant">
                    <Heading size={4} textColor="white" textSize="30px">
                       <CustomLink href="https://facebook.github.io/react-native/docs/handling-touches.html">
-                        <span>TouchableHighlight component</span>
+                        <span>Handling Touches component</span>
                       </CustomLink>  
                     </Heading>
                     <iframe  style={{width: '800px', height: '540px'}} frameBorder="0" allowFullScreen="" src="https://facebook.github.io/react-native/docs/handling-touches.html"></iframe>                    
+                </Slide>
+
+                <Slide transition={["fade"]} bgColor="blackcurrant">
+                   <Heading size={4} textColor="white" textSize="30px">
+                      <CustomLink href="https://facebook.github.io/react-native/docs/touchablehighlight.html">
+                        <span>TouchableHighlight component</span>
+                      </CustomLink>  
+                    </Heading>
+                    <iframe  style={{width: '800px', height: '540px'}} frameBorder="0" allowFullScreen="" src="https://facebook.github.io/react-native/docs/touchablehighlight.html"></iframe>                    
                 </Slide>
 
                 <Slide transition={["slide"]} bgColor="blackcurrant">

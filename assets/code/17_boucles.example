@@ -1,22 +1,16 @@
 ...
+
 render() {
   const { array } = this.props;
-  return (
-    <div>
-      {
-          if (array.length === 0) {
-            return (
-              <div>No element! Try creating one!</div>
-            );
-          } else {
-
-            array.map((item, idx) => {
-              return (
-                <Element item={item} />
-              )
-            })
-          }
-       }
-      </div>
-  )
+  let component;
+  if (array.length === 0) {
+    component = <div>No element! Try creating one!</div>
+  } else {
+    const elements = [];
+    array.map((item, idx) => {
+      elements.push(<Element item={item} />);
+    });
+    component = elements;
+  }
+  return <div>{component}</div>;
 }
