@@ -1,0 +1,6 @@
+// src/containers/TodosContainer.js
+// ...
+const TodosContainer = connect(mapStateToProps, mapDispatchToProps)(
+  withLoading(Todos)
+);
+export default TodosContainer;

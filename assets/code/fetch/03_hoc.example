@@ -1,20 +1,12 @@
-// High Order Component
-function fetchTodos(WrappedComponent) {
-  return class extends Component {
-    componentDidMount() {
-      fetch('api/todos.json')
-      .then((response) =>  {
-          return response.json();
-      }).then((results) => {
-          this.props.fetchComplete(results);
-      }).catch((err) =>  {
-          this.props.fetchError(err);
-      });
-    }
-    render() {
-      return (
-        <WrappedComponent {...this.props} />
-      );
-    }
+// src/hoc/withLoading.js
+import React from 'react';
+import Loading from '../components/Loading';
+
+const withLoading = Component => props => {
+  if (props.isLoading) {
+    return <Loading />;
   }
-}
+  return <Component {...props} />;
+};
+
+export default withLoading;

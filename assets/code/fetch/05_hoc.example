@@ -1,0 +1,6 @@
+// sans compose
+// ...
+const TodosContainer = connect(mapStateToProps, mapDispatchToProps)(
+  withError(withLoading(Todos))
+);
+export default TodosContainer;

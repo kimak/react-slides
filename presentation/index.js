@@ -113,6 +113,8 @@ const images = {
     reduximage: require("../assets/redux/redux-image.png"),
     shema: require("../assets/redux/redux-arch.jpg"),
     devtools: require("../assets/redux/devtools.gif"),
+    recompose: require("../assets/redux/recompose.png"),
+    styleguide: require("../assets/redux/styleguide.png"),
   },
   fetch: {
     clientserver: require("../assets/fetch/client-server.png"),
@@ -1258,7 +1260,10 @@ export default class Presentation extends React.Component {
                     lang="js"
                     source={require("raw-loader!../assets/code/fetch/02_fetch.example")}
                     margin="20px auto"
-                  />    
+                  />  
+                  <CustomLink href="https://github.com/whatwg/fetch/issues/27">
+                    Abort: Une limitation de Fetch.
+                </CustomLink>     
               </Slide>
               <Slide transition={["slide"]} bgColor="blackcurrant">
                   <Heading size={1} textSize="30px">
@@ -1276,16 +1281,43 @@ export default class Presentation extends React.Component {
               </Slide>
               <Slide transition={["slide"]} bgColor="blackcurrant">
                   <Heading size={1} textSize="30px">
-                    <span>Une limitation de Fetch ?</span>
+                  <CustomLink href="https://github.com/gaearon/redux-thunk#installation">
+                    <span>redux-thunk</span>
+                </CustomLink>     
                   </Heading>
-                  <CustomLink href="https://github.com/whatwg/fetch/issues/27">
-                    <ImageSlide
-                      imageSrc={images.fetch.abort}
-                      imageHeight="493px"
-                    />
-                </CustomLink>    
-                  <Heading size={1} textSize="22px">
-                    <span>Possible avec les modules npm: axios, superagent etc.</span>
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/redux/14_action-creator.example")}
+                    margin="20px auto"
+                  />  
+                  <Heading size={1} textSize="30px">
+                    Action creator: asynchrone
+                  </Heading>
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span>redux-thunk middleware</span>
+                  </Heading>
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/redux/15_redux-thunk.example")}
+                    margin="20px auto"
+                  />  
+                  <CustomLink href="https://github.com/gaearon/redux-thunk#installation">
+                    Installation
+                </CustomLink>     
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span>Example avec fetch</span>
+                  </Heading>
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/redux/16_fetch.example")}
+                    margin="20px auto"
+                  />  
+                  <Heading size={1} textSize="30px">
+                    actions/todosActions.js
                   </Heading>
               </Slide>
               <Slide transition={["slide"]} bgColor="blackcurrant">
@@ -1311,6 +1343,53 @@ export default class Presentation extends React.Component {
                     source={require("raw-loader!../assets/code/fetch/03_hoc.example")}
                     margin="20px auto"
                   />   
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/fetch/04_hoc.example")}
+                    margin="20px auto"
+                  />  
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span style={{ color: dandelion }}>Compose HOC</span>
+                  </Heading>
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/fetch/05_hoc.example")}
+                    margin="20px auto"
+                  />  
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/fetch/06_hoc.example")}
+                    margin="20px auto"
+                  />    
+              </Slide>
+              <Slide transition={["zoom"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span style={{ color: dandelion }}>Recompose</span>
+                  </Heading>
+                <CustomLink href="https://github.com/acdlite/recompose">
+                <ImageSlide
+                  imageSrc={images.redux.recompose}
+                  imageHeight="493px"
+                />
+                </CustomLink>
+                  <Heading size={1} textSize="30px">
+                    <span>HOC library</span>
+                  </Heading>
+              </Slide>
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span style={{ color: dandelion }}>Recompose</span>
+                  </Heading>
+                  <CodePane
+                    lang="js"
+                    source={require("raw-loader!../assets/code/fetch/07_recompose.example")}
+                    margin="20px auto"
+                  />   
+                  <Heading size={1} textSize="30px">
+                    <span>Lifecycle example</span>
+                  </Heading>
               </Slide>
               <Slide transition={["slide"]} bgColor="blackcurrant">
                   <Heading size={1} >
@@ -1541,7 +1620,21 @@ export default class Presentation extends React.Component {
                 />
                 </CustomLink>
               </Slide>
-                            <Slide transition={["fade"]} bgColor="blackcurrant">
+              <Slide transition={["slide"]} bgColor="blackcurrant">
+                  <Heading size={1} textSize="30px">
+                    <span>React Styleguidist</span>
+                  </Heading>
+                 <CustomLink href="https://github.com/styleguidist/react-styleguidist">
+                    <ImageSlide
+                      imageSrc={images.redux.styleguide}
+                      imageHeight="493px"
+                    />
+                </CustomLink>   
+                  <Heading size={1} textSize="22px">
+                    <span>Components documentation</span>
+                  </Heading> 
+              </Slide>
+              <Slide transition={["fade"]} bgColor="blackcurrant">
                   <Heading size={4} textColor="dandelion" textSize="38px">
                     <span>React Native</span>
                   </Heading>      

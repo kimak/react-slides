@@ -1,0 +1,24 @@
+import {
+  FETCH_TODOS_REQUEST,
+  FETCH_TODOS_SUCCESS,
+  FETCH_TODOS_ERROR
+} from "../actions/actionTypes";
+
+/* action creator used by redux-thunk middleware */
+export function fetchTodos() {
+  return dispatch => {
+
+    dispatch({ type: FETCH_TODOS_REQUEST });
+
+    fetch("api/todos.json")
+      .then(response => {
+        return response.json();
+      })
+      .then(todos => {
+        dispatch({ type: FETCH_TODOS_SUCCESS, todos });
+      })
+      .catch(err => {
+        dispatch({ type: FETCH_TODOS_ERROR, err });
+      });
+  };
+}

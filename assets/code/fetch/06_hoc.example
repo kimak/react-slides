@@ -1,0 +1,9 @@
+
+// avec compose
+import { compose } from "redux";
+// ...
+const TodosContainer = compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  withError,
+  withLoading,
+)(Todos);
