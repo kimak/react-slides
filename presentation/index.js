@@ -104,6 +104,11 @@ const images = {
     todo1: require("../assets/native/todo1.png"), 
     todo2: require("../assets/native/todo2.png"),
   },
+  navigation: {
+    choice: require("../assets/navigation/choice.png"),
+    docs: require("../assets/navigation/docs.png"),
+    exercice: require("../assets/navigation/exercice.gif"),
+  },
   redux: {
     logo: require("../assets/redux/logo.png"),
     flux: require("../assets/redux/flux.png"),
@@ -1979,7 +1984,83 @@ export default class Presentation extends React.Component {
                         imageHeight="550px"
                       />
                     </CustomLink>  
-                </Slide>   
+                </Slide> 
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <Heading fit size={1} textSize="45px">
+                      <span>React Native</span>
+                    </Heading>
+                    <Heading fit size={1} textColor="dandelion" textSize="45px">
+                       Navigation
+                    </Heading>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="blackcurrant">                                 
+                  <ImageSlide
+                    imageSrc={images.navigation.choice}
+                    imageHeight="380px"
+                  /> 
+                </Slide> 
+
+                <Slide transition={["slide"]} bgColor="blackcurrant">                                 
+                    <Heading size={4} textColor="white" textSize="30px">
+                      <span>React Navigation</span>
+                    </Heading>
+                    <CustomLink href="https://reactnavigation.org/docs/intro/">
+                      <ImageSlide
+                        imageSrc={images.navigation.docs}
+                        imageHeight="550px"
+                      />
+                    </CustomLink>  
+                </Slide> 
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <Heading textSize="30px" textColor="white">
+                      <span>src/index.js</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/navigation/01_init.example")}
+                      margin="20px auto"
+                    />
+                </Slide>
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <Heading textSize="30px" textColor="white">
+                      <span>src/navigation/index.js</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/navigation/02_navigation.example")}
+                      margin="20px auto"
+                    />
+                </Slide>
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <Heading textSize="30px" textColor="white">
+                      <span>src/navigation/AppNavigator.js</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/navigation/03_navigator.example")}
+                      margin="20px auto"
+                    />
+                </Slide>
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <Heading textSize="30px" textColor="white">
+                      <span>src/redux/reducers/navigation.js</span>
+                    </Heading>
+                    <CodePane
+                      lang="jsx"
+                      source={require("raw-loader!../assets/code/navigation/04_reducer.example")}
+                      margin="20px auto"
+                    />
+                </Slide>
+                <Slide transition={["slide"]} bgColor="blackcurrant">
+                    <Heading textSize="30px" textColor="white">
+                      <span>Objectif</span>
+                    </Heading>
+                    <ImageSlide
+                        imageSrc={images.navigation.exercice}
+                        imageHeight="550px"
+                      />
+                </Slide>
+                
         </Deck>
       </Spectacle>
     );
